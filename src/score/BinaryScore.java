@@ -13,6 +13,7 @@ public abstract class BinaryScore extends Score<Integer>{
 	public BinaryScore(String item1, String item2, int value)
 	{
 		// Création de la correspondance entre 0 et 1 et signification.
+		elements = new String[2];
 		elements[0] = item1;
 		elements[1] = item2;
 		val = value;
@@ -22,10 +23,10 @@ public abstract class BinaryScore extends Score<Integer>{
 	
 	
 	// Définition de la méthode hérité de Score.
-	public void getScore(Demand D) {
+	public int getScore(Demand D) {
 		Integer field = extractD(D);
 		//Vérifie si le critère de l'offre correspond à la demande.
-		score = (val == field)? 10 : 0;	
+		return score = (val == field)? 10 : 0;	
 	}
 
 	public abstract Integer extractD(Demand D);

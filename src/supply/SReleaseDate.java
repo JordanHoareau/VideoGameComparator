@@ -2,10 +2,12 @@ package supply;
 
 import java.util.Date;
 
-public class SReleaseDate extends Supply{
+public class SReleaseDate{
+	
+
 	private Date date;
 	
-	public SReleaseDate(){
+	/*public SReleaseDate(){
 		date = new Date();
 	}
 	
@@ -20,5 +22,5 @@ public class SReleaseDate extends Supply{
 
 	public void setDate(Date date) {
 		this.date = date;
-	}
+	}*/
 }

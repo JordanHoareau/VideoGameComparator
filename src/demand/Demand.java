@@ -27,7 +27,7 @@ public class Demand {
 	private DBuyMethod dbm;
 	private DGameType dgt;
 
-	public int getDGameMode()
+	public int getDGameType()
 	{
 		return dgm.getType();
 	}
