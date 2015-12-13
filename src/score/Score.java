@@ -6,4 +6,8 @@ public abstract class Score<E> {
 	protected int score;
 	public abstract E extractD(Demand D);
 	public abstract int getScore(Demand D);
+	
+	public String toString(){
+		return "Le score de ce critère est: "+score;
+	}
 }
