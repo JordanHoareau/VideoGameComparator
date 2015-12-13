@@ -1,3 +1,9 @@
+
+/**
+ * @author guitt
+ *
+ */
+
 package demand;
 /* Titre - Description - Editeur - Prix -
 Note du jeu - Date de sortie - Mode de jeu - 
@@ -10,8 +16,8 @@ public class Demand {
 	private DEditor dedit;
 	private DPrice dprice;
 	private DMark dmark;
-	private DReleaseDate drd;
-	private DGameMode dgm;
+	//private DReleaseDate drd;
+	private DGameType dgm;
 	private DPaiementMethod dpm;
 	private DDifficulty ddiff;
 	private DLifeTime dlt;
@@ -20,11 +26,13 @@ public class Demand {
 	private DAccessory dacce;
 	private DBuyMethod dbm;
 	private DGameType dgt;
-	
-	public Demand(){
+
+	public int getDGameMode()
+	{
+		return dgm.getType();
 	}
-	
-	public void setdtitle(String s){
-		dtitle.setTitle(s);
+	public Demand(int gm)
+	{
+		dgm = new DGameType(gm);
 	}
 }
