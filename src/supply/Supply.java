@@ -8,15 +8,16 @@ public class Supply {
 	protected int length_C;
 	private Score<?> criterion[];
 	
-	public Supply(int gm, int size)
+	public Supply(SGameType gm, SBuyMethod bm, int size)
 	{
 		criterion = new Score[size];
-		criterion[0] = new SGameType(gm);
-		length_C = 1;
+		criterion[0] = gm;
+		criterion[1] = bm;
+		length_C = 2;
 		score = 0;
 	}
-	
-	public void Compare(Demand myDemand)
+		
+	public void compare(Demand myDemand)
 	{
 		for (int i=0; i< length_C; i++)
 			score += criterion[i].getScore(myDemand);

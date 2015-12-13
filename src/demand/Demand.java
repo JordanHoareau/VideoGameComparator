@@ -31,8 +31,14 @@ public class Demand {
 	{
 		return dgm.getType();
 	}
-	public Demand(int gm)
+	
+	public int getDBuyMethod()
 	{
-		dgm = new DGameType(gm);
+		return dbm.getMethod();
+	}
+	public Demand(DGameType gm, DBuyMethod bm)
+	{
+		dgm = gm;
+		dbm = bm;
 	}
 }

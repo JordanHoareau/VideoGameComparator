@@ -21,7 +21,7 @@ public class Comparator {
 	{
 		for(int i=0; i<length; i++)
 		{
-			supply[i].Compare(demand);
+			supply[i].compare(demand);
 		}
 	}
 	
