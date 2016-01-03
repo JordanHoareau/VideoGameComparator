@@ -1,11 +1,18 @@
+/**
+ * 
+ */
 package demand;
 
-public class DGameType {
+/**
+ * @author guitt
+ *
+ */
+public class DGameStyle {
 		// ATTRIBUTS
 	private int type;	// Numéro contenant le Mode de jeu.
 	
 		// CONSTRUCTUEUR
-	public DGameType(int item)
+	public DGameStyle(int item)
 	{
 		type = item;
 	}

@@ -4,10 +4,13 @@ import demand.Demand;
 import score.Score;
 
 public class Supply {
+	
+		// ATTRIBUTS
 	protected int score;
 	protected int length_C;
 	private Score<?> criterion[];
 	
+		// CONSTRUCTEUR
 	public Supply(SGameType gm, SBuyMethod bm, int size)
 	{
 		criterion = new Score[size];
@@ -17,6 +20,8 @@ public class Supply {
 		score = 0;
 	}
 		
+		// METHODES
+	
 	public void compare(Demand myDemand)
 	{
 		for (int i=0; i< length_C; i++)
