@@ -3,7 +3,6 @@
  */
 package supply;
 
-import demand.Demand;
 import score.BinaryScore;
 
 /**
@@ -17,7 +16,7 @@ public class SGameType extends BinaryScore {
 		super("Hors Ligne", "En Ligne", m); // Appel le constructeur de BinaryScore.
 	}
 
-	public Integer extractD(Demand D) {
-		return D.getDGameType();
+	public Integer extractD(DemandMethods myDemand) {
+		return myDemand.getDGameType();
 	}
 }

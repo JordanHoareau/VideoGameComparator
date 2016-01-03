@@ -2,8 +2,6 @@
  * 
  */
 package supply;
-
-import demand.Demand;
 import score.BinaryScore;
 
 /**
@@ -11,16 +9,24 @@ import score.BinaryScore;
  *
  */
 public class SBuyMethod extends BinaryScore{
+		//	ATTRIBUTS
 	protected SPrice price;
-	//CONSTRUCTEURS
-	public SBuyMethod(SPrice prix, int m)
+	
+		//CONSTRUCTEURS
+	/**
+	 * Constructeur par défaut.
+	 * @param prix : prix du jeu.
+	 * @param c    : forme de paiement pour ce jeu.c
+	 */
+	public SBuyMethod(SPrice prix, int c)
 	{
-		super("Abonnement", "Licence", m);
+		super("Abonnement", "Licence", c);
 		price = prix;
 	}
-	
-	public Integer extractD(Demand D)
+
+		// METHODES
+	public Integer extractD(DemandMethods myDemand)
 	{
-		return D.getDBuyMethod();
+		return myDemand.getDBuyMethod();
 	}
 }

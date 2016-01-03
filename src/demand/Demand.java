@@ -6,6 +6,7 @@
 
 package demand;
 
+import supply.DemandMethods;
 import supply.Intervalle;
 import supply.Triplet;
 
@@ -14,13 +15,12 @@ Note du jeu - Date de sortie - Mode de jeu -
 Mode de paiement - Difficulté - Durée de vie - 
 Style de l'histoire - Support de jeu - Jouable avec accessoires - Lieu d'achat - Type de jeu*/ 
 
-public class Demand {
+public class Demand implements DemandMethods{
 		// ATTRIBUTS
 	private DTitle dtitle;		// Eléments présent dans le titre du jeu.
 	private DDescription ddesc;	// Eléments présent dans la descrition.
 	private DEditor dedit;		// Eléments présent dans le nom de l'éditeur.
 	
-	private DPrice dprice;		// Intervalle de prix du jeu.
 	private DMark dmark;		// Intervalle de note du jeu.
 	private DReleaseDate drd;	// Intervalle de sortie du jeu.
 	
@@ -43,7 +43,6 @@ public class Demand {
 	 * @param title : DTitle objet contenant les mots-clefs du titre du jeu.
 	 * @param desc  : DDescription objet contenant les mots-clefs de la description.
 	 * @param edit  : DEditor objet contenant les mots-clefs de l'éditeur.
-	 * @param price : DPrice objet contenant un intervalle de prix pour le jeu.
 	 * @param mark  : DMark objet contenant un intervalle de note pour le jeu.
 	 * @param rd    : DReleaseDate objet contenant un intervalle de date (timestamp) pour la date de sortie du jeu.
 	 * @param gt    : DGameType objet contenant le mode de jeu.
@@ -57,12 +56,11 @@ public class Demand {
 	 * @param sa    : DSale objet contenant l'ensemblre des lieu de ventes voulus.
 	 * @param nSale : int nombre de lieux de ventes sélectionnés par le client.
 	 */
-	public Demand(DTitle title, DDescription desc, DEditor edit, DPrice price, DMark mark, DReleaseDate rd, DGameType gt, DBuyMethod bm, DDifficulty diff, DLifeTime lt, DGameStyle gst, DStoryType st, DGameSupport gs, DAccessory acce, DSale[] sa, int nSale)
+	public Demand(DTitle title, DDescription desc, DEditor edit, DMark mark, DReleaseDate rd, DGameType gt, DBuyMethod bm, DDifficulty diff, DLifeTime lt, DGameStyle gst, DStoryType st, DGameSupport gs, DAccessory acce, DSale[] sa, int nSale)
 	{
 		dtitle = title;
 		ddesc  = desc;
 		dedit  = edit;
-		dprice = price;
 		dmark  = mark;
 		drd    = rd;
 		dgt    = gt;
@@ -110,7 +108,8 @@ public class Demand {
 	 */
 	public Intervalle getPrice()
 	{
-		return dprice.getPrice();
+		DPrice price = dbm.getPrice();
+		return price.getPrice();
 	}
 	
 	/**

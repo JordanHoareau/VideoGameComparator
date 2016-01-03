@@ -1,9 +1,8 @@
 package score;
 
-import demand.Demand;
+import supply.DemandMethods;
 
 public abstract class BinaryScore extends Score<Integer>{
-	
 		// ATTRIBUTS
 	String elements[];	// Contients les deux choix possibles pour un critère.
 	int val;
@@ -23,14 +22,11 @@ public abstract class BinaryScore extends Score<Integer>{
 	
 	
 	// Définition de la méthode hérité de Score.
-	public int getScore(Demand D) {
-		Integer field = extractD(D);
+	public int getScore(DemandMethods myDemand) {
+		Integer field = extractD(myDemand);
 		//Vérifie si le critère de l'offre correspond à la demande.
 		return score = (val == field)? 10 : 0;	
 	}
 
-	public abstract Integer extractD(Demand D);
-
-
-	
+	public abstract Integer extractD(DemandMethods myDemand);	
 }

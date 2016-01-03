@@ -11,7 +11,10 @@ public class DReleaseDate {
 		// CONSTRUCTEUR
 	public DReleaseDate(Date d, Date f)
 	{
-		range = new Intervalle(d.getTime(), f.getTime());	// Créer un intervalle de double en convertissant la date en TimeStamp.
+		if( d != null && f!= null)
+			range = new Intervalle(d.getTime(), f.getTime());	// Créer un intervalle de double en convertissant la date en TimeStamp.
+		else 
+			range = new Intervalle(0,0);
 	}
 	
 		// METHODE

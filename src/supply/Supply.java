@@ -1,6 +1,5 @@
 package supply;
 
-import demand.Demand;
 import score.Score;
 
 public class Supply {
@@ -22,7 +21,7 @@ public class Supply {
 		
 		// METHODES
 	
-	public void compare(Demand myDemand)
+	public void compare(DemandMethods myDemand)
 	{
 		for (int i=0; i< length_C; i++)
 			score += criterion[i].getScore(myDemand);
