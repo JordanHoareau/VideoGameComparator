@@ -20,5 +20,4 @@ public class Main {
 		c.AfficherScore();
 		//d.setdtitle("Guild Wars 2");
 	}
-
 }
