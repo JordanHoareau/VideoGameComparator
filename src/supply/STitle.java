@@ -1,9 +1,8 @@
 package supply;
 
-public class STitle {
-	private String title;
+public class STitle extends SKeywords{
 	
 	public STitle(String s){
-		title = s ;
+		super(s);
 	}
 }
