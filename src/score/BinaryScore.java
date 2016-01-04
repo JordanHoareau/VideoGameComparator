@@ -7,7 +7,6 @@ public abstract class BinaryScore extends Score<Integer>{
 	String elements[];	// Contients les deux choix possibles pour un critère.
 	int val;
 	
-	
 		// CONSTRUCTEURS
 	public BinaryScore(String item1, String item2, int value)
 	{
@@ -19,7 +18,6 @@ public abstract class BinaryScore extends Score<Integer>{
 	}
 	
 		// METHODES
-	
 	
 	// Définition de la méthode hérité de Score.
 	public int getScore(DemandMethods myDemand) {
