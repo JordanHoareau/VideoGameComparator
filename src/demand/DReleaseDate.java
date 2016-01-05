@@ -1,7 +1,6 @@
 package demand;
 
-import java.util.Date;
-
+import java.util.Calendar;
 import supply.Intervalle;
 
 public class DReleaseDate {
@@ -9,10 +8,10 @@ public class DReleaseDate {
 	protected Intervalle range;	// Contient l'intervalle de date de sortie.
 	
 		// CONSTRUCTEUR
-	public DReleaseDate(Date d, Date f)
+	public DReleaseDate(Calendar d, Calendar f)
 	{
 		if( d != null && f!= null)
-			range = new Intervalle(d.getTime(), f.getTime());	// Créer un intervalle de double en convertissant la date en TimeStamp.
+			range = new Intervalle(d.getTimeInMillis(), f.getTimeInMillis());	// Créer un intervalle de double en convertissant la date en TimeStamp.
 		else 
 			range = new Intervalle(0,0);
 	}

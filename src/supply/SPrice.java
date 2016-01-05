@@ -1,10 +1,18 @@
 package supply;
 
-public class SPrice {
-	protected int price;
-	
-	public SPrice(int item)
+import score.IntervalleScore;
+
+public class SPrice extends IntervalleScore{
+		// CONSTRUCTEUR
+	public SPrice(float item)
 	{
-		price = item;
+		super(item);
+		desc = true;
+	}
+		
+		// METHODES
+	public Intervalle extractD(DemandMethods myDemand)
+	{
+		return myDemand.getPrice();
 	}
 }

@@ -26,6 +26,12 @@ public abstract class BinaryScore extends Score<Integer>{
 	public int getScore(DemandMethods myDemand) {
 		Integer field = extractD(myDemand);
 		//Vérifie si le critère de l'offre correspond à la demande.
-		return score = (val == field)? scoreMax : 0;	
-	}	
+		return score = (val == field)? scoreMax+getScoreSpe(myDemand) : 0+getScoreSpe(myDemand);	
+	}
+	
+	public String toString(){
+		return val+"("+score+")";
+	}
+	
+	public abstract int getScoreSpe(DemandMethods myDemand);
 }

@@ -36,6 +36,6 @@ public class Comparator {
 	public void AfficherScore()
 	{
 		for (int i =0; i < length; i++)
-			System.out.println(supply[i]);
+			System.out.println(supply[i]+"\n");
 	}
 }
