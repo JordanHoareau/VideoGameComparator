@@ -8,14 +8,22 @@ public class Supply {
 	protected int score;			// Score de l'offre par rapport à une demande.
 	protected int length_C;			// Nombre de critère présent dans l'offre.
 	private Score<?> criterion[];	// Ensemble des critères correspondant à l'offre.
+	private SPrice price;
 	
 		// CONSTRUCTEUR
-	public Supply(SGameType gm, SBuyMethod bm, int size)
+	public Supply(SGameType gm, SBuyMethod bm, SMark m, SReleaseDate sd )
 	{
-		criterion = new Score[size];
-		criterion[0] = gm;
-		criterion[1] = bm;
-		length_C = 2;
+		length_C = 12;
+		criterion = new Score[length_C];
+		for(int i=0; i < length_C; i++)
+			criterion[i] = null;
+		price = bm.getPrice();
+		
+		criterion[3] = m;
+		criterion[4] = sd;
+		criterion[5] = gm;
+		criterion[6] = bm;
+		
 		score = 0;
 	}
 		
@@ -27,7 +35,8 @@ public class Supply {
 	public void compare(DemandMethods myDemand)
 	{
 		for (int i=0; i< length_C; i++)
-			score += criterion[i].getScore(myDemand);
+			if(criterion[i]!= null)
+				score += criterion[i].getScore(myDemand);
 	}
 	
 	/**
@@ -44,6 +53,25 @@ public class Supply {
 	 */
 	public String toString()
 	{
-		return "Le score de cette offre est: "+score;
+		return "Caractéristique de l'offre : \n"
+	           +"\t- Title : "+criterion[0]
+			   +"\n\t- Description : "+criterion[1]
+	           +"\n\t- Editeur : "+criterion[2]
+	           +"\n-------- -------- -------- -------- \n"
+	           +"\n\t- Note : "+criterion[3]
+	           +"\n\t- Date de sortie : "+criterion[4]
+	           +"\n\t- Mode de jeu : "+criterion[5]
+	           +"\n\t- Forme de paiement : "+criterion[6]
+	           +"\n\t\t-Prix : "+price
+	           +"\n-------- -------- -------- -------- \n"
+	           +"\n\t- Difficulté : "+criterion[7]
+	           +"\n\t- Durée de jeu : "+criterion[8]
+	           +"\n\t- Style de jeu : "+criterion[9]
+	           +"\n\t- Style d'histoire : "+criterion[9]
+	           +"\n\t- Support possibles : "+criterion[10]
+	           +"\n\t- Lieu de vente : "+criterion[11]
+	           +"\n-------- -------- -------- -------- "
+			   +"\n-------- Score : "+score+" -------- "
+		 	   +"\n-------- -------- -------- -------- ";
 	}
 }

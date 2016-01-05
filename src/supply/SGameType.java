@@ -19,4 +19,9 @@ public class SGameType extends BinaryScore {
 	public Integer extractD(DemandMethods myDemand) {
 		return myDemand.getDGameType();
 	}
+
+	@Override
+	public int getScoreSpe(DemandMethods myDemand) {
+		return 0;
+	}
 }

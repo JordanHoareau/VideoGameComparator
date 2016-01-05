@@ -29,4 +29,15 @@ public class SBuyMethod extends BinaryScore{
 	{
 		return myDemand.getDBuyMethod();
 	}
+
+	public int getScoreSpe(DemandMethods myDemand) {
+		return price.getScore(myDemand);
+	}
+	
+	public SPrice getPrice()
+	{
+		return price;
+	}
+	
+
 }

@@ -6,6 +6,7 @@ public abstract class Score<E> {
 	protected int score;
 	public abstract E extractD(DemandMethods myDemand);
 	public abstract int getScore(DemandMethods myDemand);
+	int scoreMax;											// Valeur maximale offerte par ce critère.
 	
 	public String toString(){
 		return "Le score de ce critère est: "+score;

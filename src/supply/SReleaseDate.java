@@ -1,26 +1,19 @@
 package supply;
 
-import java.util.Date;
+import java.util.Calendar;
+import score.IntervalleScore;
 
-public class SReleaseDate{
-	
-
-	private Date date;
-	
-	/*public SReleaseDate(){
-		date = new Date();
+public class SReleaseDate extends IntervalleScore{
+		// CONSTRUCTEUR
+	public SReleaseDate(Calendar d)
+	{
+		super(d.getTimeInMillis());
+		desc = false;
 	}
 	
-	@SuppressWarnings("deprecation")
-	public SReleaseDate(int y, int m, int d){
-		date = new Date(y,m,d);
+		// METHODES
+	public Intervalle extractD(DemandMethods myDemand)
+	{
+		return myDemand.getReleaseDate();
 	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}*/
 }
