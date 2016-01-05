@@ -20,7 +20,7 @@ public class SBuyMethod extends BinaryScore{
 	 */
 	public SBuyMethod(SPrice prix, int c)
 	{
-		super("Abonnement", "Licence", c);
+		super(c, "Abonnement", "Licence");
 		price = prix;
 	}
 

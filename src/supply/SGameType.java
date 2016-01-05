@@ -13,7 +13,7 @@ public class SGameType extends BinaryScore {
 	// CONSTRUCTEURS
 	public SGameType(int m)
 	{
-		super("Hors Ligne", "En Ligne", m); // Appel le constructeur de BinaryScore.
+		super(m, "Hors Ligne", "En Ligne"); // Appel le constructeur de BinaryScore.
 	}
 
 	public Integer extractD(DemandMethods myDemand) {

@@ -19,6 +19,7 @@ public abstract class IntervalleScore extends Score<Intervalle> {
 		// CONSTRUCTEUR
 	public IntervalleScore(float item)
 	{
+		super();
 		val      = item;
 		scoreMax = 100;
 		ratioNeg = (float) 0.5;

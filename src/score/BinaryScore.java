@@ -8,12 +8,13 @@ public abstract class BinaryScore extends Score<Integer>{
 	int val;			// Valeur encapsulée par l'offre.
 	
 		// CONSTRUCTEURS
-	public BinaryScore(String item1, String item2, int value)
+	public BinaryScore(int value, String...item)
 	{
+		super();
 		// Création de la correspondance entre 0 et 1 et signification.
-		elements = new String[2];
-		elements[0] = item1;
-		elements[1] = item2;
+		elements = new String[item.length];
+		for(String c : item)
+			elements[0] = c;
 		val         = value;
 		scoreMax    = 10;
 	}
