@@ -6,16 +6,25 @@ public class Supply {
 	
 		// ATTRIBUTS
 	protected int score;			// Score de l'offre par rapport à une demande.
-	protected int length_C;			// Nombre de critère présent dans l'offre.
+	protected int length_C = 12;			// Nombre de critère présent dans l'offre.
 	private Score<?> criterion[];	// Ensemble des critères correspondant à l'offre.
 	
 		// CONSTRUCTEUR
-	public Supply(SGameType gm, SBuyMethod bm, int size)
+	public Supply(STitle title, SDescription desc, SEditor edit, SMark mark, SReleaseDate rd, SGameType gm, SBuyMethod bm, SDifficulty diff, SLifeTime lt, SGameStyle gst, SStoryType st, SGameSupport gs, SAccessory acce, SSale[] sa, int nSale)
 	{
-		criterion = new Score[size];
-		criterion[0] = gm;
-		criterion[1] = bm;
-		length_C = 2;
+		criterion = new Score[length_C];
+		criterion[0] = title;
+		criterion[1] = desc;
+		criterion[2] = edit;
+		criterion[3] = bm;
+		criterion[4] = gm;
+		criterion[5] = bm;
+		criterion[6] = gm;
+		criterion[7] = bm;
+		criterion[8] = gm;
+		criterion[9] = bm;
+		criterion[10] = gm;
+		criterion[11] = bm;
 		score = 0;
 	}
 		

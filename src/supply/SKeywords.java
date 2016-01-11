@@ -1,9 +1,11 @@
 package supply;
 
-public class SKeywords {
+import score.KeywordScore;
+
+public abstract class SKeywords extends KeywordScore{
 	protected String field;
 	
 	public SKeywords(String s){
-		field = new String(s);
+		super(s);
 	}
 }

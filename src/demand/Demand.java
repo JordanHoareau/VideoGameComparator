@@ -81,25 +81,25 @@ public class Demand implements DemandMethods{
 	/**
 	 * A COMPLETER !!!!!!!!!
 	 */
-	public void getTitle()
+	public String getTitle()
 	{
-		
+		return dtitle.getField();
 	}
 	
 	/**
 	 * A COMPLETER !!!!!!!!!
 	 */
-	public void getDescription()
+	public String getDescription()
 	{
-		
+		return ddesc.getField();
 	}
 	
 	/**
 	 *  A COMPLETER !!!!!!
 	 */
-	public void getEditor()
+	public String getEditor()
 	{
-		
+		return dedit.getField();
 	}
 	
 	/**
