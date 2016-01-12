@@ -1,4 +1,5 @@
+/.gitignore
 /demand/
-/supply/
-/score/
 /main/
+/score/
+/supply/
