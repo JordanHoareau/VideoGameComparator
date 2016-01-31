@@ -11,18 +11,23 @@ import supply.Triplet;
 public abstract class DEquipement {
 		// ATTRIBUTS
 	protected Triplet<String, String, Integer>[] equipements;	// Contient l'ensemble des équipements souhaités (constructeur, nom, type).
-	protected int size;											// Nombre de choix fait par le client.	
-
 		
 		// CONSTRUCTEUR 
-	public DEquipement (String[] c, String[] n, int[] t, int s)
+	@SuppressWarnings("unchecked")
+	public DEquipement (String[] c, String[] n, int[] t)
 	{
-		size = s;
-		for (int i=0; i < size; i++)
+		if(t == null)
 		{
-			equipements[i] = new Triplet<String, String, Integer>(c[i], n[i], t[i]);
+			equipements = null;
 		}
-			
+		else
+		{
+			equipements = new Triplet[t.length];
+			for (int i=0; i < t.length; i++)
+			{
+				equipements[i] = new Triplet<String, String, Integer>(c[i], n[i], t[i]);
+			}
+		}
 	}
 		
 		// METHODES 
@@ -33,14 +38,5 @@ public abstract class DEquipement {
 	public Triplet<String, String, Integer>[] getEquipements()
 	{
 		return equipements;
-	}
-	
-	/**
-	 * Fonction retournant le nombre de choix fait par le client.
-	 * @return size : int représenant le nombre d'accessoire choisit.
-	 */
-	public int getSize()
-	{
-		return size;
 	}
 }

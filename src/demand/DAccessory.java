@@ -2,8 +2,8 @@ package demand;
 
 public class DAccessory extends DEquipement{
 		// CONSTRUCTEUR
-	public DAccessory(String[] c, String[] n, int[] t, int s)
+	public DAccessory(String[] c, String[] n, int[] t)
 	{
-		super(c, n , t, s);
+		super(c, n , t);
 	}
 }

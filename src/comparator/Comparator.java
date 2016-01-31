@@ -24,7 +24,7 @@ public class Comparator {
 	/**
 	 * Fonction permettant de comparer chaque offre avec la demande.
 	 */
-	public void Compare()
+	public void compare()
 	{
 		for(int i=0; i<length; i++)
 			supply[i].compare(demand);
@@ -33,9 +33,9 @@ public class Comparator {
 	/**
 	 * Fonction affichant le score final de chaque offre par rapport à la demande du client.
 	 */
-	public void AfficherScore()
+	public void afficherScore()
 	{
 		for (int i =0; i < length; i++)
-			System.out.println(supply[i]+"\n");
+			System.out.println("\n\n Caractéristique de l'offre n°"+i+" \n\n"+supply[i]+"\n");
 	}
 }

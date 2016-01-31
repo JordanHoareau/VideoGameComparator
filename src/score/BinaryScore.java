@@ -1,22 +1,24 @@
 package score;
 
+import java.util.ArrayList;
+
 import supply.DemandMethods;
 
 public abstract class BinaryScore extends Score<Integer>{
 		// ATTRIBUTS
-	String elements[];	// Contients les deux choix possibles pour un critère.
-	int val;			// Valeur encapsulée par l'offre.
+	ArrayList<String> elements;	// Contients les deux choix possibles pour un critère.
+	int val;					// Valeur encapsulée par l'offre.
 	
 		// CONSTRUCTEURS
 	public BinaryScore(int value, String...item)
 	{
 		super();
+		elements = new ArrayList<String>();
 		// Création de la correspondance entre 0 et 1 et signification.
-		elements = new String[item.length];
 		for(String c : item)
-			elements[0] = c;
+			elements.add(c);
 		val         = value;
-		scoreMax    = 10;
+		scoreMax    = 50;
 	}
 	
 		// METHODES

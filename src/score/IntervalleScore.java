@@ -12,8 +12,8 @@ import supply.Intervalle;
  */
 public abstract class IntervalleScore extends Score<Intervalle> {
 		// ATTRIBUTS
-	protected float val;	// Contient la valeur encapsulée par un objet IntervalleScore.
-	protected boolean desc;	// Définit l'état dans lequel on est entre : une valeur inférieur est moins grave qu'une valeure supérieur ou inverse.
+	protected float val;		// Contient la valeur encapsulée par un objet IntervalleScore.
+	protected boolean desc;		// Définit l'état dans lequel on est entre : une valeur inférieur est moins grave qu'une valeure supérieur ou inverse.
 	protected float ratioNeg;	// Ratio appliqué si on va vers des valeurs peu intéressante.
 	protected float ratioPos;	// Ratio applique si on va vers des valeurs dont c'est moins grave.
 		// CONSTRUCTEUR

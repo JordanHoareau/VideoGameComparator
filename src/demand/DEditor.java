@@ -1,5 +1,7 @@
 package demand;
 
-public class DEditor {
-	
+public class DEditor extends DKeywords{
+	public DEditor(String s){
+		super(s);
+	}
 }

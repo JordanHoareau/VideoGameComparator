@@ -35,7 +35,7 @@ public class Demand implements DemandMethods{
 	private DStoryType dst;		// Ensemble des styles d'histoire.
 	private DGameSupport dgs;	// Ensemble des supports compatibles avec le jeu.
 	private DAccessory dacce;	// Ensemble des accessoires permettant de jouer au jeu.
-	private DSale[] dsa;			// Ensemble des lieux de vente acceptés.
+	private DSale[] dsa;		// Ensemble des lieux de vente acceptés.
 
 		// CONSTRUCTUEUR
 	/**
@@ -81,25 +81,25 @@ public class Demand implements DemandMethods{
 	/**
 	 * A COMPLETER !!!!!!!!!
 	 */
-	public void getTitle()
+	public String getTitle()
 	{
-		
+		return dtitle.getField();
 	}
 	
 	/**
 	 * A COMPLETER !!!!!!!!!
 	 */
-	public void getDescription()
+	public String getDescription()
 	{
-		
+		return ddesc.getField();
 	}
 	
 	/**
 	 *  A COMPLETER !!!!!!
 	 */
-	public void getEditor()
+	public String getEditor()
 	{
-		
+		return dedit.getField();
 	}
 	
 	/**
@@ -108,8 +108,8 @@ public class Demand implements DemandMethods{
 	 */
 	public Intervalle getPrice()
 	{
-		DPrice price = dbm.getPrice();
-		return price.getPrice();
+		DPrice price = (dbm ==null)? null:dbm.getPrice();
+		return (price ==null)? null:price.getPrice();
 	}
 	
 	/**
@@ -118,7 +118,7 @@ public class Demand implements DemandMethods{
 	 */
 	public Intervalle getMark()
 	{
-		return dmark.getRange();
+		return (dmark ==null)? null:dmark.getRange();
 	}
 	
 	/**
@@ -127,7 +127,7 @@ public class Demand implements DemandMethods{
 	 */
 	public Intervalle getReleaseDate()
 	{
-		return drd.getRange();
+		return (drd ==null)? null:drd.getRange();
 	}
 	
 	/**
@@ -136,7 +136,7 @@ public class Demand implements DemandMethods{
 	 */
 	public int getDGameType()
 	{
-		return dgt.getType();
+		return (dgt ==null)? null:dgt.getType();
 	}
 	
 	/**
@@ -145,7 +145,7 @@ public class Demand implements DemandMethods{
 	 */
 	public int getDBuyMethod()
 	{
-		return dbm.getMethod();
+		return (dbm ==null)? null:dbm.getMethod();
 	}
 	
 	/**
@@ -154,7 +154,7 @@ public class Demand implements DemandMethods{
 	 */
 	public int getDifficulty()
 	{
-		return ddiff.getDifficulty();
+		return (ddiff ==null)? null:ddiff.getDifficulty();
 	}
 	
 	/**
@@ -163,7 +163,7 @@ public class Demand implements DemandMethods{
 	 */
 	public int getDLifeTime()
 	{
-		return dlt.getTime();
+		return (dlt ==null)? null:dlt.getTime();
 	}
 	
 	/**
@@ -172,7 +172,7 @@ public class Demand implements DemandMethods{
 	 */
 	public int getGameStyle()
 	{
-		return dgst.getType();
+		return (dgst ==null)? null:dgst.getType();
 	}
 	
 	/**
@@ -181,35 +181,19 @@ public class Demand implements DemandMethods{
 	 */
 	public int[] getStoryType()
 	{
-		return dst.getType();
+		return (dst ==null)? null:dst.getType();
 	}
-	
-	/**
-	 * Fonction retournant le nombre de style d'histoire du jeu selectionnés.
-	 * @return dst.getSize() : int symbolisant le nombre de styles d'histoires choisis.
-	 */
-	public int getStoryTypeSize()
-	{
-		return dst.getSize();
-	}
-	
+
 	/**
 	 * Fonction retournant l'ensemble des choix pour les supports compatibles.
 	 * @return dgs.getEquipements() :  Triplet<String, String, Integer>[] symbolisant les supports compatibles choisis (constructeur, nom, type).
 	 */
 	public Triplet<String, String, Integer>[] getGameSupportEquipements()
 	{
-		return dgs.getEquipements();
+		
+		return (dgs == null)?null : dgs.getEquipements();
 	}
 	
-	/**
-	 * Fonction retournant le nombre de supports selectionnés.
-	 * @return dgs.getSize() : int symbolisant le nombre de supports choisis.
-	 */
-	public int getGameSupportSize()
-	{
-		return dgs.getSize();
-	}
 	
 	/**
 	 * Fonction retournant l'ensemble des choix pour les accessoires compatibles.
@@ -217,15 +201,6 @@ public class Demand implements DemandMethods{
 	 */
 	public Triplet<String, String, Integer>[] getAccessoryEquipements()
 	{
-		return dacce.getEquipements();
-	}
-	
-	/**
-	 * Fonction retournant le nombre d'accessoires selectionnés.
-	 * @return dgs.getSize() : int symbolisant le nombre de accessoires choisis.
-	 */
-	public int getAccessorySize()
-	{
-		return dacce.getSize();
+		return (dacce ==null)? null:dacce.getEquipements();
 	}
 }
